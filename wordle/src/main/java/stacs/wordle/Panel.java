@@ -2,6 +2,7 @@ package stacs.wordle;
 
 /**
  * Panel
+ *
  * @author Seigo
  */
 public class Panel {
@@ -11,6 +12,7 @@ public class Panel {
 
     /**
      * constructor
+     *
      * @param
      */
     public Panel() {
@@ -20,6 +22,7 @@ public class Panel {
 
     /**
      * getter letter
+     *
      * @return letter
      */
     public char getLetter() {
@@ -28,6 +31,7 @@ public class Panel {
 
     /**
      * getter color
+     *
      * @return color
      */
     public Colors getColor() {
@@ -36,6 +40,7 @@ public class Panel {
 
     /**
      * setter letter
+     *
      * @param letter
      */
     public void setLetter(char letter) {
@@ -44,6 +49,7 @@ public class Panel {
 
     /**
      * setter color
+     *
      * @param color
      */
     public void setColor(Colors color) {

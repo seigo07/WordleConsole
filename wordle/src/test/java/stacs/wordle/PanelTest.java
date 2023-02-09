@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * PanelTest
+ *
  * @author Seigo
  */
 class PanelTest {
@@ -22,45 +23,45 @@ class PanelTest {
 
     /**
      * Get a initial letter.
-     * @result Test letter is set ' ' after initialization.
+     *
+     * @result letter should be set ' ' after initialization in constructor.
      */
     @Test
-    public void shouldGetInitialLetter()
-    {
+    public void shouldGetInitialLetter() {
         Panel panel = new Panel();
         assertEquals(' ', panel.getLetter());
     }
 
     /**
      * Get a initial color.
-     * @result Test color is set GRAY after initialization.
+     *
+     * @result color should be set GRAY after initialization in constructor.
      */
     @Test
-    public void shouldGetInitialColor()
-    {
+    public void shouldGetInitialColor() {
         Panel panel = new Panel();
         assertEquals(Colors.GRAY, panel.getColor());
     }
 
     /**
      * Set a letter.
-     * @result Letter should be 'A' after being called setLetter with 'A'.
+     *
+     * @result letter should be 'A' after being called setLetter with 'A'.
      */
     @Test
-    public void shouldSetLetter()
-    {
+    public void shouldSetLetter() {
         Panel panel = new Panel();
         panel.setLetter('A');
         assertEquals('A', panel.getLetter());
     }
 
     /**
-     * Set a Color.
-     * @result Color should be YELLOW after being called setColor with YELLOW.
+     * Set a color.
+     *
+     * @result color should be YELLOW after being called setColor with YELLOW.
      */
     @Test
-    public void shouldSetColor()
-    {
+    public void shouldSetColor() {
         Panel panel = new Panel();
         panel.setColor(Colors.YELLOW);
         assertEquals(Colors.YELLOW, panel.getColor());
