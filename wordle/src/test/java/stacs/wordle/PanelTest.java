@@ -46,7 +46,7 @@ class PanelTest {
     /**
      * Set a letter.
      *
-     * @result letter should be 'A' after being called setLetter with 'A'.
+     * @result letter should be 'A' after setLetter being called with 'A'.
      */
     @Test
     public void shouldSetLetter() {
@@ -58,7 +58,7 @@ class PanelTest {
     /**
      * Set a color.
      *
-     * @result color should be YELLOW after being called setColor with YELLOW.
+     * @result color should be YELLOW after setColor being called with YELLOW.
      */
     @Test
     public void shouldSetColor() {
