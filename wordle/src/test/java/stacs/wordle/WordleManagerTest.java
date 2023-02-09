@@ -83,7 +83,7 @@ class WordleManagerTest {
      * Get an outputText.
      *
      * @result outputText should be equal to SUCCESS_MESSAGE + numberOfAttempts
-     * after called setOutputText with true.
+     * after setOutputText being called with true.
      */
     @Test
     public void shouldGetOutputTextSuccess() {
@@ -96,7 +96,7 @@ class WordleManagerTest {
      * Get an outputText.
      *
      * @result outputText should be equal to FAILURE_MESSAGE + answer
-     * after called setOutputText with false.
+     * after setOutputText being called with false.
      */
     @Test
     public void shouldGetOutputTextFailure() {
@@ -157,7 +157,7 @@ class WordleManagerTest {
     /**
      * Test inputWord is equal to one of the answer.
      *
-     * @result should be true when isAnswer is called with the correct answer.
+     * @result should be true after isAnswer being called isAnswer with the correct answer.
      */
     @Test
     public void isAnswerTrue() {
@@ -168,7 +168,7 @@ class WordleManagerTest {
     /**
      * Test inputWord is not equal to one of the answer.
      *
-     * @result should be false when isAnswer is called with the incorrect answer.
+     * @result should be false after isAnswer being with the incorrect answer.
      */
     @Test
     public void isAnswerFalse() {
@@ -180,7 +180,7 @@ class WordleManagerTest {
      * Get a numberOfAttempts.
      *
      * @result numberOfAttempts should be equal to 3
-     * after called setNumberOfAttempts with 3.
+     * after setNumberOfAttempts being called with 3.
      */
     @Test
     public void shouldGetNumberOfAttempts() {
