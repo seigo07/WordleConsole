@@ -2,6 +2,7 @@ package stacs.wordle;
 
 /**
  * Colors
+ *
  * @author Seigo
  */
 public enum Colors {
@@ -16,6 +17,7 @@ public enum Colors {
 
     /**
      * constructor
+     *
      * @param code
      */
     Colors(String code) {
@@ -24,6 +26,7 @@ public enum Colors {
 
     /**
      * getter code
+     *
      * @return code
      */
     public String getCode() {
