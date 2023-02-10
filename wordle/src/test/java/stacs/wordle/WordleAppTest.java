@@ -1,12 +1,21 @@
 package stacs.wordle;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
-import org.junit.jupiter.api.Test;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * WordleAppTest
+ *
+ * @author Seigo
+ */
 public class WordleAppTest {
+
+    @BeforeEach
+    void setUp() {
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
 }
