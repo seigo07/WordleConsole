@@ -14,46 +14,93 @@ public class Board {
     private Panel[][] panels;
     private String input;
 
+    /**
+     * constructor
+     */
     public Board() {
-        createPanels();
+        setPanels();
         createBoard();
     }
 
+    /**
+     * getter row
+     *
+     * @return row
+     */
     public int getRow() {
         return row;
     }
 
+    /**
+     * getter panels
+     *
+     * @return panels
+     */
     public Panel[][] getPanels() {
         return panels;
     }
 
+    /**
+     * getter Panel
+     *
+     * @param i, j
+     * @return Panel
+     */
     public Panel getPanel(int i, int j) {
         return panels[i][j];
     }
 
+    /**
+     * getter input
+     *
+     * @return input
+     */
     public String getInput() {
         return input;
     }
 
+    /**
+     * Check input is valid
+     *
+     * @param words
+     * @return input
+     */
     public boolean isInputValid(ArrayList<String> words) {
         return words.contains(getInput());
     }
 
+    /**
+     * setter row
+     * Set row += 1
+     */
     public void incrementRow() {
-        this.row++;
+        row++;
     }
 
+    /**
+     * setter input
+     *
+     * @param input
+     */
     public void setInput(String input) {
         this.input = input;
     }
 
+    /**
+     * setter letter in panel in panels
+     * Set letter in input to panel in panels
+     */
     public void setPanelLetter() {
         for (int i = 0; i < WordleManager.getLimitNumberOfLetters(); i++) {
             getPanels()[getRow()][i].setLetter(getInput().charAt(i));
         }
     }
 
-    private void createPanels() {
+    /**
+     * setter panels
+     * Initialize panels with [LIMIT_NUMBER_OF_ATTEMPTS][LIMIT_NUMBER_OF_LETTERS] size.
+     */
+    private void setPanels() {
         panels = new Panel[WordleManager.getLimitNumberOfAttempts()][WordleManager.getLimitNumberOfLetters()];
         for (int i = 0; i < WordleManager.getLimitNumberOfAttempts(); i++) {
             for (int j = 0; j < WordleManager.getLimitNumberOfLetters(); j++) {
@@ -63,6 +110,9 @@ public class Board {
         }
     }
 
+    /**
+     * Print panel with its color and letter in console.
+     */
     public void createBoard() {
         for (int i = 0; i < WordleManager.getLimitNumberOfAttempts(); i++) {
             for (int j = 0; j < WordleManager.getLimitNumberOfLetters(); j++) {
@@ -73,6 +123,10 @@ public class Board {
         }
     }
 
+    /**
+     * setter color in panel in panels.
+     * Set proper color to panel in panels based on the letter in input.
+     */
     public void setPanelColor(WordleManager wm) {
         LinkedHashMap<Character, Integer> letters = new LinkedHashMap<>(wm.getLetters());
         String answer = wm.getAnswer();

@@ -37,7 +37,7 @@ class BoardTest {
      * @result panels should be two-dimensional array with [LIMIT_NUMBER_OF_ATTEMPTS][LIMIT_NUMBER_OF_LETTERS] size after initialization in constructor
      */
     @Test
-    public void shouldCreatePanels() {
+    public void shouldSetPanels() {
         assertTrue(
                 board.getPanels().length == WordleManager.getLimitNumberOfAttempts()
                         && board.getPanels()[0].length == WordleManager.getLimitNumberOfLetters()
