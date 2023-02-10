@@ -12,7 +12,7 @@ import java.util.*;
  */
 class WordleManager {
 
-    private static final String WORDLIST_FILE_PATH = "src/main/resources/wordlist.txt";
+    private static final String WORDLIST_FILE_PATH = "wordle/src/main/resources/wordlist.txt";
     private static final String SUCCESS_MESSAGE = "Congratulations! Your score is ";
     private static final String FAILURE_MESSAGE = "Failure. The correct answer is ";
     private static final int LIMIT_NUMBER_OF_LETTERS = 5;
