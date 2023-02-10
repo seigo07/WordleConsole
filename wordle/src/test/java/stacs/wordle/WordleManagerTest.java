@@ -16,8 +16,17 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class WordleManagerTest {
 
-    private static final String WORDLIST_TEST_FILE_PATH = "src/test/resources/wordlist-test.txt";
     WordleManager wordleManager;
+    private static final String WORDLIST_TEST_FILE_PATH = "src/test/resources/wordlist-test.txt";
+
+    /**
+     * getter WORDLIST_TEST_FILE_PATH
+     *
+     * @return WORDLIST_TEST_FILE_PATH
+     */
+    public static String getWordlistTestFilePath() {
+        return WORDLIST_TEST_FILE_PATH;
+    }
 
     /**
      * Initialize WordleManager before tests.
