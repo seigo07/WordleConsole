@@ -157,7 +157,7 @@ class WordleManagerTest {
     /**
      * Test inputWord is equal to one of the answer.
      *
-     * @result should be true after isAnswer being called isAnswer with the correct answer.
+     * @result should be true after isAnswer being called with the correct answer.
      */
     @Test
     public void isAnswerTrue() {
