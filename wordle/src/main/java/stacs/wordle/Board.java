@@ -67,7 +67,7 @@ public class Board {
         for (int i = 0; i < WordleManager.getLimitNumberOfAttempts(); i++) {
             for (int j = 0; j < WordleManager.getLimitNumberOfLetters(); j++) {
                 Panel panel = getPanel(i, j);
-                System.out.printf(panel.getColor().getCode() + " %C " + Colors.WHITE.getCode() +" ", panel.getLetter());
+                System.out.printf(panel.getColor().getCode() + " %C " + Colors.WHITE.getCode() + " ", panel.getLetter());
             }
             System.out.println("\n");
         }
