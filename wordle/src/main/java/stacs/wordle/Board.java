@@ -136,14 +136,34 @@ public class Board {
             Panel panel = getPanels()[getRow()][i];
             char letter = panel.getLetter();
 
-            if (letter == answer.charAt(i) && letters.get(letter) >= 1) {
+            if (isCorrectLetterInTheCorrectPlace(letter, answer.charAt(i), letters.get(letter))) {
                 panel.setColor(Colors.GREEN);
                 letters.put(letter, letters.get(letter) - 1);
-            } else if (answer.contains(String.valueOf(letter)) && letters.get(letter) >= 1) {
+            } else if (isCorrectLetterInTheWrongPlace(letter, answer, letters.get(letter))) {
                 panel.setColor(Colors.YELLOW);
                 letters.put(letter, letters.get(letter) - 1);
             }
         }
+    }
+
+    /**
+     * Check isCorrectLetterInTheCorrect is valid
+     *
+     * @param letter, answerChar, letters
+     * @return true/false
+     */
+    public boolean isCorrectLetterInTheCorrectPlace (char letter, char answerChar, Integer letters) {
+        return letter == answerChar && letters >= 1;
+    }
+
+    /**
+     * Check isCorrectLetterInTheWrongPlace is valid
+     *
+     * @param letter, answer, letters
+     * @return true/false
+     */
+    public boolean isCorrectLetterInTheWrongPlace (char letter, String answer, Integer letters) {
+        return answer.contains(String.valueOf(letter)) && letters >= 1;
     }
 
 }

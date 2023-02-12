@@ -173,4 +173,44 @@ class BoardTest {
         assertTrue(trues[0] || trues[1] || trues[2]);
     }
 
+    /**
+     * Test isCorrectLetterInTheCorrectPlace is valid.
+     *
+     * @result should be true if a correct letter in the correct place.
+     */
+    @Test
+    public void isCorrectLetterInTheCorrectPlaceTrue() {
+        assertTrue(board.isCorrectLetterInTheCorrectPlace('E', 'E', 2));
+    }
+
+    /**
+     * Test isCorrectLetterInTheCorrectPlace is invalid.
+     *
+     * @result should be false if a correct letter in the wrong place.
+     */
+    @Test
+    public void isCorrectLetterInTheCorrectPlaceFalse() {
+        assertFalse(board.isCorrectLetterInTheCorrectPlace('E', 'A', 2));
+    }
+
+    /**
+     * Test isCorrectLetterInTheWrongPlace is valid.
+     *
+     * @result should be true if an answer contains letter.
+     */
+    @Test
+    public void isCorrectLetterInTheWrongPlaceTrue() {
+        assertTrue(board.isCorrectLetterInTheWrongPlace('E', "EAGLE", 2));
+    }
+
+    /**
+     * Test isCorrectLetterInTheWrongPlace is invalid.
+     *
+     * @result should be false if an answer doesn't contain letter.
+     */
+    @Test
+    public void isCorrectLetterInTheWrongPlaceFalse() {
+        assertFalse(board.isCorrectLetterInTheWrongPlace('H', "EAGLE", 2));
+    }
+
 }
