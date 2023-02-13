@@ -150,7 +150,7 @@ public class Board {
      * Check isCorrectLetterInTheCorrect is valid
      *
      * @param letter, answerChar, letters
-     * @return true/false
+     * @return letter is correct and in right position is true or false
      */
     public boolean isCorrectLetterInTheCorrectPlace (char letter, char answerChar, Integer letters) {
         return letter == answerChar && letters >= 1;
@@ -160,7 +160,7 @@ public class Board {
      * Check isCorrectLetterInTheWrongPlace is valid
      *
      * @param letter, answer, letters
-     * @return true/false
+     * @return letter is correct and in wrong position is true or false
      */
     public boolean isCorrectLetterInTheWrongPlace (char letter, String answer, Integer letters) {
         return answer.contains(String.valueOf(letter)) && letters >= 1;
