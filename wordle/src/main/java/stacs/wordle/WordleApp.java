@@ -11,6 +11,9 @@ import java.util.Scanner;
  */
 public class WordleApp {
 
+    Board board;
+    WordleManager wordleManager;
+
     /**
      * Controller
      * Running game.
@@ -19,34 +22,83 @@ public class WordleApp {
      */
     public static void main(String[] args) throws FileNotFoundException {
 
-        Board board = new Board();
-        WordleManager wordleManager = new WordleManager(WordleManager.getWordlistFilePath());
+        WordleApp wordleApp = new WordleApp(WordleManager.getWordlistFilePath());
 
-        for (int i = 0; i < board.getPanels().length; i++) {
+        while (wordleApp.isPossibleToContinue()) {
 
-            do {
-                Scanner sc = new Scanner(System.in);
-                System.out.print("Enter your answer: ");
-                board.setInput(sc.next().toUpperCase());
-                if (!board.isInputValid(wordleManager.getWords())) {
-                    System.out.println("You entered an invalid word!");
-                }
-            } while (!board.isInputValid(wordleManager.getWords()));
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Please enter a five letter word: ");
 
-            board.setPanelLetter();
-            board.setPanelColor(wordleManager);
-            board.createBoard();
-            board.incrementRow();
+            if (!wordleApp.isInputValid(sc.next().toUpperCase())) {
+                System.out.println("Please enter a valid word");
+                continue;
+            }
 
-            if (wordleManager.isAnswer(board.getInput())) {
-                wordleManager.setNumberOfAttempts(board.getRow());
-                wordleManager.setOutputText(true);
+            wordleApp.updateBoard();
+
+            if (wordleApp.isAnswer()) {
+                wordleApp.completeGame();
                 break;
             }
-            wordleManager.setOutputText(false);
+            wordleApp.wordleManager.setOutputText(false);
         }
 
-        System.out.println(wordleManager.getOutputText());
-
+        System.out.println(wordleApp.wordleManager.getOutputText());
     }
+
+    /**
+     * constructor
+     */
+    public WordleApp(String filePath) throws FileNotFoundException {
+        board = new Board();
+        wordleManager = new WordleManager(filePath);
+    }
+
+    /**
+     * Check is it possible to continue the game
+     *
+     * @return board.getRow() reaches board.getPanels().length is true or false.
+     */
+    public boolean isPossibleToContinue() {
+        return board.getRow() < board.getPanels().length;
+    }
+
+    /**
+     * Check input is valid
+     *
+     * @param input
+     * @return input is valid is true or false.
+     */
+    public boolean isInputValid(String input) {
+        board.setInput(input);
+        return board.isInputValid(wordleManager.getWords());
+    }
+
+    /**
+     * Call board methods to update it.
+     */
+    public void updateBoard() {
+        board.setPanelLetter();
+        board.setPanelColor(wordleManager);
+        board.createBoard();
+        board.incrementRow();
+    }
+
+    /**
+     * Check input is equal to answer.
+     *
+     * @return input is equal to answer is true or false.
+     */
+    public boolean isAnswer() {
+        return wordleManager.isAnswer(board.getInput());
+    }
+
+    /**
+     * Finish game by output score when the input is equal to the answer.
+     */
+    public void completeGame() {
+        wordleManager.setNumberOfAttempts(board.getRow());
+        wordleManager.setOutputText(true);
+    }
+
 }
