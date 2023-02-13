@@ -26,6 +26,5 @@ wordle/javadoc/apidocs/index.html
 cd wordle
 mvn install
 mvn package
-cd target
-java -jar wordle-1.0-SNAPSHOT.jar
+java -cp target/wordle-1.0-SNAPSHOT.jar stacs.wordle.WordleApp
 ```
