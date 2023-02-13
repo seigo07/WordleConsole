@@ -23,5 +23,9 @@ wordle/javadoc/apidocs/index.html
 
 * Please run the following command
 ```
-
+cd wordle
+mvn install
+mvn package
+cd target
+java -jar wordle-1.0-SNAPSHOT.jar
 ```
