@@ -43,7 +43,8 @@ public class Board {
     /**
      * getter Panel
      *
-     * @param i, j
+     * @param i first index
+     * @param j second index
      * @return Panel
      */
     public Panel getPanel(int i, int j) {
@@ -62,7 +63,7 @@ public class Board {
     /**
      * Check input is valid
      *
-     * @param words
+     * @param words list of possible words
      * @return input
      */
     public boolean isInputValid(ArrayList<String> words) {
@@ -80,7 +81,7 @@ public class Board {
     /**
      * setter input
      *
-     * @param input
+     * @param input input word from user
      */
     public void setInput(String input) {
         this.input = input;
@@ -126,6 +127,8 @@ public class Board {
     /**
      * setter color in panel in panels.
      * Set proper color to panel in panels based on the letter in input.
+     *
+     * @param wm instance of WordleManager
      */
     public void setPanelColor(WordleManager wm) {
         LinkedHashMap<Character, Integer> letters = new LinkedHashMap<>(wm.getLetters());
@@ -149,20 +152,24 @@ public class Board {
     /**
      * Check isCorrectLetterInTheCorrect is valid
      *
-     * @param letter, answerChar, letters
+     * @param letter letter of input word
+     * @param answerChar letter of answer
+     * @param letters representing color by Integer value. Green is 2 Yellow is 1 Gray is null.
      * @return letter is correct and in right position is true or false
      */
-    public boolean isCorrectLetterInTheCorrectPlace (char letter, char answerChar, Integer letters) {
+    public boolean isCorrectLetterInTheCorrectPlace(char letter, char answerChar, Integer letters) {
         return letter == answerChar && letters >= 1;
     }
 
     /**
      * Check isCorrectLetterInTheWrongPlace is valid
      *
-     * @param letter, answer, letters
+     * @param letter letter of input word
+     * @param answer letters of answer
+     * @param letters representing color by Integer value. Green is 2 Yellow is 1 Gray is null.
      * @return letter is correct and in wrong position is true or false
      */
-    public boolean isCorrectLetterInTheWrongPlace (char letter, String answer, Integer letters) {
+    public boolean isCorrectLetterInTheWrongPlace(char letter, String answer, Integer letters) {
         return answer.contains(String.valueOf(letter)) && letters >= 1;
     }
 

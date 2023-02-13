@@ -7,9 +7,21 @@ package stacs.wordle;
  */
 public enum Colors {
 
+    /**
+     * Represent yellow color
+     */
     YELLOW("\u001b[43;1m"),
+    /**
+     * Represent green color
+     */
     GREEN("\u001b[42;1m"),
+    /**
+     * Represent gray color
+     */
     GRAY("\u001b[40;1m"),
+    /**
+     * Represent white color
+     */
     WHITE("\033[0m"),
     ;
 

@@ -18,7 +18,8 @@ public class WordleApp {
      * Controller
      * Running game.
      *
-     * @param args
+     * @param args default argument for array of String (no usage)
+     * @throws FileNotFoundException for file not found exception handling
      */
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -48,6 +49,9 @@ public class WordleApp {
 
     /**
      * constructor
+     *
+     * @param filePath string of file path
+     * @throws FileNotFoundException for file not found exception handling
      */
     public WordleApp(String filePath) throws FileNotFoundException {
         board = new Board();
@@ -66,7 +70,7 @@ public class WordleApp {
     /**
      * Check input is valid
      *
-     * @param input
+     * @param input input word from user
      * @return input is valid is true or false.
      */
     public boolean isInputValid(String input) {

@@ -10,7 +10,7 @@ import java.util.*;
  *
  * @author Seigo
  */
-class WordleManager {
+public class WordleManager {
 
     private static final String WORDLIST_FILE_PATH = "src/main/resources/wordlist.txt";
     private static final String SUCCESS_MESSAGE = "Congratulations! Your score is ";
@@ -26,6 +26,9 @@ class WordleManager {
 
     /**
      * constructor
+     *
+     * @param filePath string of file path
+     * @throws FileNotFoundException for file not found exception handling
      */
     public WordleManager(String filePath) throws FileNotFoundException {
         words = loadWordlist(filePath);
@@ -37,10 +40,12 @@ class WordleManager {
      * Load text file from given path.
      * Read each word line by line and add it to String list.
      *
+     * @param filePath string of file path
      * @return word list loaded from given path.
+     * @throws FileNotFoundException for file not found exception handling
      */
-    protected static ArrayList<String> loadWordlist(String wordlistPath) throws FileNotFoundException {
-        Scanner s = new Scanner(new File(wordlistPath));
+    protected static ArrayList<String> loadWordlist(String filePath) throws FileNotFoundException {
+        Scanner s = new Scanner(new File(filePath));
         ArrayList<String> wordlist = new ArrayList<>();
         while (s.hasNext()) {
             wordlist.add(s.next().toUpperCase());
@@ -167,18 +172,18 @@ class WordleManager {
     /**
      * Check inputWord is equal to answer.
      *
-     * @param inputWord
+     * @param input input word from user
      * @return inputWord is equal to answer is true or false.
      */
-    public boolean isAnswer(String inputWord) {
-        return inputWord.equals(answer);
+    public boolean isAnswer(String input) {
+        return input.equals(answer);
     }
 
     /**
      * setter outputText
      * Set SUCCESS_MESSAGE or FAILURE_MESSAGE to outputText based on isSuccess.
      *
-     * @param isSuccess
+     * @param isSuccess whether the game is completed or not
      */
     public void setOutputText(boolean isSuccess) {
         outputText = isSuccess ? SUCCESS_MESSAGE + numberOfAttempts : FAILURE_MESSAGE + answer.toUpperCase();
@@ -187,7 +192,7 @@ class WordleManager {
     /**
      * setter numberOfAttempts
      *
-     * @param numberOfAttempts
+     * @param numberOfAttempts how many times user attempt to try to input word
      */
     public void setNumberOfAttempts(int numberOfAttempts) {
         this.numberOfAttempts = numberOfAttempts;
