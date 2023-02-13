@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"stacs.wordle","l":"Board"},{"p":"stacs.wordle","l":"Colors"},{"p":"stacs.wordle","l":"Panel"},{"p":"stacs.wordle","l":"WordleApp"},{"p":"stacs.wordle","l":"WordleManager"}];updateSearchResults();
