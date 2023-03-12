@@ -1,4 +1,4 @@
-# CS5031 Assignment 1
+# Project
 
 Wordle console app.
 
