@@ -16,7 +16,6 @@ wordle/javadoc/apidocs/index.html
 
 ### Dependencies
 
-* MacOS Ventura 13.1
 * Java Version: openjdk 19.0.1
 
 ### Executing program
